@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" 
+         ToolsVersion="4.0">
+   
+   <PropertyGroup>
+      <OutputPath>../output</OutputPath>
+      <BuildArtifactsPath>$(OutputPath)/buildartifacts</BuildArtifactsPath>
+      <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <BuildArtifacts Include="$(BuildArtifactsPath)"/>
+      <SolutionFile Include="../MusicStore.sln"/>
+   </ItemGroup>
+
+   <ItemGroup>
+      <SolutionRoot Include="."/>
+      <NUnit Include="../tools/Nunit/nunit-console.exe"/>
+      <TestAssemblies Include="../output/buildartifacts/*.Tests.dll"/>
+      <TestResults Include="../output/buildartifacts/TestResults.xml"/>
+   </ItemGroup>
+
+   <ItemGroup>
+      <NCoverPath Include="../tools/NCover"/>
+      <NCoverCoverage Include="../output/buildartifacts/Coverage.xml"/>
+      <NCoverTrend Include="../output/buildartifacts/coverage.trend"/>
+      <CoverageReportDir Include="../output/buildartifacts/coverage"/>
+   </ItemGroup>
+
+   <ItemGroup>
+      <MsDeploy Include="C:\Program Files\IIS\Microsoft Web Deploy V3\msdeploy.exe"></MsDeploy>
+      <PackageFile Include="../output/buildartifacts/package/MusicStore.zip"></PackageFile>
+      <Website Include="../output/buildartifacts/_PublishedWebsites/MusicStore.Web"></Website>
+   </ItemGroup>
+
+
+   <PropertyGroup>
+      <CoveredAssemblies>MusicStore.Core;MusicStore.Infrastructure;MusicStore.Web</CoveredAssemblies>
+      <MinimumCoverage>
+         <Threshold>
+            <CoverageMetric>SymbolCoverage</CoverageMetric>
+            <Type>View</Type>
+            <Value>75</Value>
+         </Threshold>
+      </MinimumCoverage>
+   </PropertyGroup>
+   
+</Project>

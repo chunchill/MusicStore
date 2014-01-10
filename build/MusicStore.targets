@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+         ToolsVersion="4.0">
+
+   <Target Name="Clean">
+      <RemoveDir Directories="@(BuildArtifacts)"/>
+   </Target>
+
+   <Target Name="Init" DependsOnTargets="Clean">
+      <MakeDir Directories="@(BuildArtifacts)"/>
+   </Target>
+
+   <Target Name="Compile" DependsOnTargets="Init">
+      <MSBuild Projects="@(SolutionFile)" Targets="Rebuild" Properties="OutDir=%(BuildArtifacts.FullPath);Configuration=$(Configuration)"></MSBuild>
+   </Target>
+
+   <Target Name="Test" AfterTargets="Compile">
+      <Message Text="$(ProjectDir)"></Message>
+      <Exec Command="%(NUnit.FullPath) @(TestAssemblies) /xml @(TestResults)" IgnoreExitCode="true"/>
+   </Target>
+
+   <Target Name="TestWithCoverage" DependsOnTargets="Compile">
+      <NCover TestRunnerExe="%(NUnit.FullPath)"
+              TestRunnerArgs ="@(TestAssemblies) /xml @(TestResults)"
+              ToolPath="@(NCoverPath)"
+              CoverageFile="@(NCoverCoverage)"
+              HtmlReportDir="@(CoverageReportDir)"
+              ProjectName="MusicStore"/>
+      <NCoverReporting MinimumCoverage="$(MinimumCoverage)"
+                       CoverageDataPaths="@(NCoverCoverage)"
+                       ToolPath="@(NCoverPath)"/>
+   </Target>
+
+   <Target Name="Package" DependsOnTargets="Compile">
+      <PropertyGroup>
+         <PackageDir>%(PackageFile.RootDir)%(PackageFile.Directory)</PackageDir>
+         <Source>%(Website.FullPath)</Source>
+         <Destination>%(PackageFile.FullPath)</Destination>
+      </PropertyGroup>
+      <MakeDir Directories="$(PackageDir)"></MakeDir>
+      <Exec Command='"@(MsDeploy)" -verb:sync -source:iisApp="$(Source)" -dest:package="$(Destination)"'/>
+   </Target>
+
+   <Target Name='Deploy' DependsOnTargets='Package'>
+      <Message Text='%(PackageFile.FullPath)'></Message>
+      <PropertyGroup>
+         <Source>%(PackageFile.FullPath)</Source>
+      </PropertyGroup>
+      <Exec Command='"@(MsDeploy)" -verb:sync -source:package="$(Source)" -dest:iisApp=MusicStore,userName=webDeployer,password=111111'/>
+   </Target>
+   
+</Project>

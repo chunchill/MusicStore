@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStore.Web", "src\app\MusicStore.Web\MusicStore.Web.csproj", "{8FD6509B-7435-49FF-9168-D2D50525D546}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStore.Tests", "src\test\MusicStore.Tests\MusicStore.Tests.csproj", "{37A3C53E-B601-4262-B69E-670FCA71B42C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStore.Core", "src\app\MusicStore.Core\MusicStore.Core.csproj", "{8524C400-89C9-45B9-A828-4460A408E218}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStore.Infrastructure", "src\app\MusicStore.Infrastructure\MusicStore.Infrastructure.csproj", "{0A1E2332-DCCA-4E00-B4FD-E3D041E75BEC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{54BDACE4-51DC-4A4D-B400-50AD2065C1E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStore.DependencyResolver", "src\app\MusicStore.DependencyResolver\MusicStore.DependencyResolver.csproj", "{EF2C62CF-6773-498A-86C8-B7A67FCB26EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStore.Integrate.Tests", "src\test\MusicStore.IntegrateTest\MusicStore.Integrate.Tests.csproj", "{D75B524B-870B-4094-A709-1B5B8770FB2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDemo", "TestDemo\TestDemo.csproj", "{A3C3BC19-F204-455A-BA6A-197D7A7D75CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FD6509B-7435-49FF-9168-D2D50525D546}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FD6509B-7435-49FF-9168-D2D50525D546}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FD6509B-7435-49FF-9168-D2D50525D546}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FD6509B-7435-49FF-9168-D2D50525D546}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37A3C53E-B601-4262-B69E-670FCA71B42C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37A3C53E-B601-4262-B69E-670FCA71B42C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37A3C53E-B601-4262-B69E-670FCA71B42C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37A3C53E-B601-4262-B69E-670FCA71B42C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8524C400-89C9-45B9-A828-4460A408E218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8524C400-89C9-45B9-A828-4460A408E218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8524C400-89C9-45B9-A828-4460A408E218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8524C400-89C9-45B9-A828-4460A408E218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A1E2332-DCCA-4E00-B4FD-E3D041E75BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A1E2332-DCCA-4E00-B4FD-E3D041E75BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A1E2332-DCCA-4E00-B4FD-E3D041E75BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A1E2332-DCCA-4E00-B4FD-E3D041E75BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF2C62CF-6773-498A-86C8-B7A67FCB26EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF2C62CF-6773-498A-86C8-B7A67FCB26EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF2C62CF-6773-498A-86C8-B7A67FCB26EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF2C62CF-6773-498A-86C8-B7A67FCB26EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D75B524B-870B-4094-A709-1B5B8770FB2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D75B524B-870B-4094-A709-1B5B8770FB2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D75B524B-870B-4094-A709-1B5B8770FB2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D75B524B-870B-4094-A709-1B5B8770FB2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3C3BC19-F204-455A-BA6A-197D7A7D75CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3C3BC19-F204-455A-BA6A-197D7A7D75CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3C3BC19-F204-455A-BA6A-197D7A7D75CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3C3BC19-F204-455A-BA6A-197D7A7D75CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{37A3C53E-B601-4262-B69E-670FCA71B42C} = {54BDACE4-51DC-4A4D-B400-50AD2065C1E7}
+		{D75B524B-870B-4094-A709-1B5B8770FB2C} = {54BDACE4-51DC-4A4D-B400-50AD2065C1E7}
+	EndGlobalSection
+EndGlobal
